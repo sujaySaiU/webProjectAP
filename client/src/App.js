@@ -78,7 +78,7 @@ function App() {
     if (!input.trim()) return;
     setReply("Thinking...");
     try {
-      const res = await fetch("web-project-ap-52kn.vercel.app", {
+      const res = await fetch("https://web-project-ap-52kn.vercel.app/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: input }),
