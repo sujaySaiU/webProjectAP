@@ -1,351 +1,452 @@
-/* Reset & base */
-body {
+/* Reset & Base */
+* {
   margin: 0;
-  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  background: #f0f2f5;
-  color: #222;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #171923 0%, #2A2E3F 100%);
+  color: #EDF2F7;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .App {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: #ffffff;
+  max-width: 800px;
+  margin: 3rem auto;
   padding: 2rem;
+  background: rgba(23, 25, 35, 0.9);
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
+/* Typography */
 h1 {
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  color: #B794F6;
   text-align: center;
-  color: #333;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  color: #444;
+  color: #B794F6;
+  margin: 2rem 0 1rem;
 }
 
-/* Chat form */
+/* Header */
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(42, 46, 63, 0.5);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info button {
+  padding: 0.5rem 1rem;
+  background: #FC8181;
+  color: #171923;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-info button:hover {
+  background: #E57373;
+  transform: translateY(-2px);
+}
+
+/* Date & Time Widget */
+.date-time-widget {
+  font-size: 1rem;
+  color: #A0AEC0;
+  text-align: center;
+  padding: 0.8rem;
+  background: rgba(42, 46, 63, 0.7);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease;
+}
+
+/* Chat Form */
 .chat-form {
   display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(42, 46, 63, 0.8);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
 }
 
 .chat-input {
   flex: 1;
-  padding: 0.7rem 1rem;
-  border: 2px solid #ccc;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  background: rgba(23, 25, 35, 0.9);
+  color: #EDF2F7;
+  transition: all 0.3s ease;
 }
 
 .chat-input:focus {
-  border-color: #4a90e2;
+  border-color: #68DDBA;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  box-shadow: 0 0 0 3px rgba(104, 221, 186, 0.2);
 }
 
 .chat-btn {
-  padding: 0 1.5rem;
-  background: #4a90e2;
-  color: white;
+  padding: 0.8rem 2rem;
+  background: #68DDBA;
+  color: #171923;
   border: none;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
 }
 
 .chat-btn:hover {
-  background: #357abd;
-  transform: scale(1.05);
+  background: #4CBBA0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Reply box */
+/* Reply Box */
 .reply-box {
-  background: #eef3f7;
-  border-radius: 10px;
-  padding: 1rem;
+  background: rgba(42, 46, 63, 0.7);
+  border-radius: 12px;
+  padding: 1.5rem;
   margin-bottom: 2rem;
-  line-height: 1.5;
-  color: #2a2a2a;
   font-size: 1.1rem;
+  color: #EDF2F7;
+  backdrop-filter: blur(8px);
+  animation: slideUp 0.8s ease;
 }
 
-/* Task form */
+/* Task Form */
 .task-form {
   display: flex;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(74, 85, 104, 0.7);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
   flex-wrap: wrap;
 }
 
 .task-input,
 .priority-select {
   flex: 1;
-  padding: 0.6rem 1rem;
-  font-size: 1rem;
-  border: 2px solid #ccc;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  font-size: 1rem;
+  background: rgba(23, 25, 35, 0.9);
+  color: #EDF2F7;
+  transition: all 0.3s ease;
 }
 
 .task-input:focus,
 .priority-select:focus {
-  border-color: #4a90e2;
+  border-color: #B794F6;
   outline: none;
-  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  box-shadow: 0 0 0 3px rgba(183, 148, 246, 0.2);
 }
 
 .add-btn {
-  padding: 0.6rem 1.5rem;
-  background: #4caf50;
-  color: white;
+  padding: 0.8rem 1.5rem;
+  background: #B794F6;
+  color: #171923;
   border: none;
   border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
 }
 
 .add-btn:hover {
-  background: #388e3c;
-  transform: scale(1.05);
+  background: #9F7AEA;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Task list */
+/* Task List */
 .task-list {
   list-style: none;
   padding: 0;
-  max-height: 320px;
+  max-height: 400px;
   overflow-y: auto;
-  border-top: 1px solid #ddd;
-  border-radius: 10px;
-  background: #fafafa;
+  border-radius: 12px;
+  background: rgba(42, 46, 63, 0.8);
+  backdrop-filter: blur(8px);
 }
 
 .task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9rem 1rem;
-  border-bottom: 1px solid #eee;
-  transition: background-color 0.3s;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  animation: slideUp 0.5s ease;
 }
 
 .task-item:last-child {
   border-bottom: none;
 }
 
-/* Priority colors */
 .priority-high {
-  background-color: #ffe6e6;
+  background: rgba(252, 129, 129, 0.2);
 }
 
 .priority-medium {
-  background-color: #fff9db;
+  background: rgba(246, 173, 85, 0.2);
 }
 
 .priority-low {
-  background-color: #e6f9ec;
+  background: rgba(104, 221, 186, 0.2);
 }
 
 .task-item.completed {
-  opacity: 0.6;
+  opacity: 0.7;
   text-decoration: line-through;
 }
 
 .task-main {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  gap: 0.75rem;
+  gap: 1rem;
   flex: 1;
 }
 
 .task-main input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
+  accent-color: #68DDBA;
 }
 
 .task-title {
-  font-weight: 600;
+  font-weight: 500;
   user-select: none;
 }
 
 .task-controls {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  white-space: nowrap;
+  gap: 0.8rem;
 }
 
 .task-priority {
-  font-size: 1.1rem;
-  user-select: none;
+  font-size: 1.2rem;
 }
 
 .task-timer {
-  font-family: monospace;
-  min-width: 50px;
+  font-family: 'IBM Plex Mono', monospace;
+  min-width: 60px;
   text-align: center;
-  font-weight: 600;
-  user-select: none;
+  font-weight: 500;
 }
 
 .timer-btn,
 .delete-btn {
-  background: transparent;
-  border: none;
+  background: rgba(42, 46, 63, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.5rem;
   cursor: pointer;
-  font-size: 1.2rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
-  transition: background-color 0.3s;
+  font-size: 1.1rem;
+  color: #EDF2F7;
+  transition: all 0.3s ease;
 }
 
 .timer-btn:hover {
-  background: #d1e7ff;
+  background: #F6AD55;
+  color: #171923;
+  transform: scale(1.1);
 }
 
 .delete-btn:hover {
-  background: #ffe5e5;
-  color: #d32f2f;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  .task-form,
-  .chat-form {
-    flex-direction: column;
-  }
-
-  .add-btn,
-  .chat-btn {
-    width: 100%;
-  }
-
-  .chat-btn {
-    margin-top: 0.5rem;
-  }
+  background: #FC8181;
+  color: #171923;
+  transform: scale(1.1);
 }
 
 /* Weather Widget */
 .weather-widget {
-  margin-top: 3rem;
-  padding: 1rem;
-  background: #d1e6f5;
-  border-radius: 16px;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(42, 46, 63, 0.7);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
   text-align: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-}
-
-.weather-widget h2 {
-  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease;
 }
 
 .weather-details {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .weather-details img {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
 }
 
 .weather-details p {
-  margin: 0.25rem 0;
-  font-size: 1rem;
-}
-
-/* Date & Time Widget */
-.date-time-widget {
-  font-size: 0.95rem;
-  color: #666;
-  margin-bottom: 10px;
-  text-align: center;
+  margin: 0.3rem 0;
+  font-size: 1.1rem;
 }
 
 /* Auth Form */
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  width: 320px;
-  margin: 100px auto;
-  padding: 30px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  gap: 1rem;
+  width: 90%;
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: rgba(42, 46, 63, 0.9);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.8s ease;
 }
 
 .auth-form h2 {
   text-align: center;
-  margin-bottom: 20px;
+  color: #B794F6;
 }
 
 .auth-form input {
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(23, 25, 35, 0.9);
+  color: #EDF2F7;
+  transition: all 0.3s ease;
 }
 
 .auth-form input:focus {
-  border-color: #4a90e2;
+  border-color: #68DDBA;
   outline: none;
+  box-shadow: 0 0 0 3px rgba(104, 221, 186, 0.2);
 }
 
 .auth-form button {
-  padding: 12px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
+  padding: 0.8rem;
+  font-size: 1rem;
+  background: #68DDBA;
+  color: #171923;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .auth-form button:hover {
-  background-color: #0056b3;
+  background: #4CBBA0;
+  transform: translateY(-2px);
 }
 
-.toggle-form {
+.auth-error {
+  color: #FC8181;
   text-align: center;
-  color: #007bff;
-  cursor: pointer;
-  text-decoration: underline;
+  font-size: 0.9rem;
 }
 
-.error-message {
-  color: red;
-  text-align: center;
-  font-weight: bold;
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Header Info */
-.user-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-.user-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Responsive Design */
+@media (max-width: 600px) {
+  .App {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .user-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .user-info {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .chat-form,
+  .task-form {
+    flex-direction: column;
+  }
+
+  .chat-btn,
+  .add-btn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .task-controls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 400px) {
+  .weather-details {
+    flex-direction: column;
+  }
+
+  .auth-form {
+    padding: 1.5rem;
+  }
 }
