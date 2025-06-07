@@ -15,7 +15,7 @@ An all-in-one personal productivity assistant built using React, Node.js, and Fi
 - **Backend**: Node.js, Express.js
 - **Authentication**: Firebase Auth
 - **Database/Storage**: LocalStorage (for tasks)
-- **External APIs**: OpenWeatherMap API (weather info)
+- **External APIs**: OpenWeatherMap API (weather info) and Openrouter API (Ai Chat)
 - **Deployment**: Vercel
 
 ---
