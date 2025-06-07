@@ -76,5 +76,6 @@ node index.js
 ## 🙌 Credits
 
 This project was built by a team of 2 as part of an academic course submission.
+1. Sujay Sharma
+2. Rishita Mathur
 
-Feel free to fork, contribute, or share feedback!
