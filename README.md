@@ -4,8 +4,8 @@
 An all-in-one personal productivity assistant built using React, Node.js, and Firebase — designed to help you manage tasks, ask questions, and stay weather-aware with a clean, minimalist UI and smooth animations.
 
 > 🔗 **Live Demo**  
-> Frontend: [web-project-ap-frpj.vercel.app](https://web-project-ap-frpj.vercel.app/)  
-> Backend: [web-project-ap-52kn.vercel.app](https://web-project-ap-52kn.vercel.app/)
+[web-project-ap-frpj.vercel.app](https://web-project-ap-frpj.vercel.app/)  
+
 
 ---
 
